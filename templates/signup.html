@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up - Cloud Storage</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <style>
+       body {
+            height: 100vh;
+            margin: 0;
+            --x: calc(var(--posX, 0) * 1px);
+            --y: calc(var(--posY, 0) * 1px);
+            /* Paste the background animation code here */
+            background-image: 
+                linear-gradient(115deg, rgb(211 255 215), rgb(0 0 0)), 
+                radial-gradient( 90% 100% at calc( 50% + var(--x)) calc( 0% + var(--y)), rgb(200 200 200), rgb(022 000 045)), 
+                radial-gradient(100% 100% at calc( 80% - var(--x)) calc( 0% - var(--y)), rgb(250 255 000), rgb(036 000 000)), 
+                radial-gradient(150% 210% at calc(100% + var(--x)) calc( 0% + var(--y)), rgb(020 175 125), rgb(000 010 255)), 
+                radial-gradient(100% 100% at calc(100% - var(--x)) calc(30% - var(--y)), rgb(255 077 000), rgb(000 200 255)), 
+                linear-gradient(60deg, rgb(255 000 000), rgb(120 086 255));
+            background-blend-mode: overlay, overlay, difference, difference, difference, normal;
+        }
+
+        .container {
+            max-width: 600px;
+            background-color: rgb(209, 202, 202);
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+    </style>
+</head>
+
+<body>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      {% for message in messages %}
+        <div class="alert alert-danger" role="alert">
+          {{ message }}
+        </div>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}  
+
+    <div class="container">
+        <h1>Create Your Account</h1>
+        <div style="border: 1px solid black; padding: 20px;">
+            <form action="/signup" method="POST">
+                <input type="text" placeholder="Name" class="form-control" name="name"><br>
+                <input type="text" placeholder="Email" class="form-control" name="email"><br>
+                <input type="password" placeholder="Password" class="form-control" name="password">
+                <button type="submit" class="btn btn-primary mt-3">Sign Up</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS, Popper.js, and jQuery (for Bootstrap functionality) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        document.body.addEventListener("pointermove", (e) => {
+            const { currentTarget: el, clientX: x, clientY: y } = e;
+            const { top: t, left: l, width: w, height: h } = el.getBoundingClientRect();
+            el.style.setProperty('--posX',  x - l - w / 2);
+            el.style.setProperty('--posY',  y - t - h / 2);
+        });
+    </script>
+</body>
+
+</html>

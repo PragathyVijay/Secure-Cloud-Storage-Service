@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>About Cloud Storage</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            height: 100vh;
+            margin: 0;
+            --x: calc(var(--posX, 0) * 1px);
+            --y: calc(var(--posY, 0) * 1px);
+            /* Paste the background animation code here */
+            background-image: 
+                linear-gradient(115deg, rgb(211 255 215), rgb(0 0 0)), 
+                radial-gradient( 90% 100% at calc( 50% + var(--x)) calc( 0% + var(--y)), rgb(200 200 200), rgb(022 000 045)), 
+                radial-gradient(100% 100% at calc( 80% - var(--x)) calc( 0% - var(--y)), rgb(250 255 000), rgb(036 000 000)), 
+                radial-gradient(150% 210% at calc(100% + var(--x)) calc( 0% + var(--y)), rgb(020 175 125), rgb(000 010 255)), 
+                radial-gradient(100% 100% at calc(100% - var(--x)) calc(30% - var(--y)), rgb(255 077 000), rgb(000 200 255)), 
+                linear-gradient(60deg, rgb(255 000 000), rgb(120 086 255));
+            background-blend-mode: overlay, overlay, difference, difference, difference, normal;
+        }
+
+        /* Font import - Add this to the top of your CSS file */
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+        .content-container {
+            background-color: rgba(43, 40, 40, 0.3); /* Semi-transparent white */
+            padding: 15px;
+            border-radius: 10px;
+            margin: 10px auto;
+            max-width: 800px;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* Two columns */
+            gap: 20px; /* Gap between columns */
+            align-items: start;
+            display: flex;
+        }
+
+        .para-container {
+            background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent white */
+            padding: 40px;
+            border-radius: 10px;
+            margin: 50px auto; 
+            max-width: 900px;
+            grid-column: 1;
+            height: 400px;
+            overflow-y: auto;
+        }
+
+        h1 {
+            font-size: 3em;
+            color: #ece6e6; /* Change the color as desired */
+            font-family:Georgia, 'Times New Roman', Times, serif;
+            margin-bottom: 20px;
+        }
+
+        .tagline {
+            font-size: 2em;
+            color: #c6eef4; /* Change the color as desired */
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            margin-bottom: 30px;
+        }
+
+        p {
+            font-size: 1.7em;
+            color: #fefefe; /* Change the color as desired */
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            line-height: 1.6;
+        }
+
+
+       /* Add these styles to your existing CSS */
+
+/* Button with transparent background */
+.btn-login {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 20px;
+    font-size: 1.2em;
+    text-decoration: none;
+    color: #fff;
+    background-color: rgba(0, 188, 212, 0.2); /* Half-transparent aqua background */
+    border-radius: 5px;
+    font-family: 'Roboto', sans-serif; /* Applying Roboto font */
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Button hover effect */
+.btn-login:hover {
+    background-color: #00bcd4; /* Aqua color on hover */
+}
+
+/* Button focus effect */
+.btn-login:focus {
+    border-color: #00bcd4; /* Highlight when focused */
+}
+
+
+        .image-column {
+            flex: 1;
+            display: flex;
+            align-items: stretch;
+        }
+
+        /* Ensure paragraph and images fill their respective columns */
+        .para-container,
+        .carousel-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .carousel-item img {
+            height: 100%; /* Make images fill the height of the carousel */
+            object-fit: cover; /* Maintain aspect ratio */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content-container">
+        <h1 class="text-center">Cloud Storage</h1>
+        <p class="text-center tagline">Safely store and distribute important data</p>
+    </div>
+    <div class="grid-container">
+        <div class="para-container">
+            <p>Our mission is to provide a secure platform for storing and sharing your most vital information. We prioritize safeguarding your data, ensuring it remains safe and accessible whenever you need it. Save and privately share photos, and albums with family and friends. No matter if it’s from a year or a lifetime ago, Cloud Storage helps you relive your favorite moments with the people that matter most.</p>
+        </div>
+        <div id="imageCarousel" class="carousel slide image-column" data-ride="carousel" data-interval="800">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://media.istockphoto.com/id/1406163999/video/business-finance-data-analytics-graph-chart-report-computer-science-businessman-typing-on.jpg?s=640x640&k=20&c=FxlXZwQXe-ioI35--IAkgK-5McFt1b1TuiFAbCnr9_I=" class="d-block w-100" style="height: 400px; object-fit: cover;" alt="Image 1">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://media.istockphoto.com/id/1124400915/photo/creative-background-the-image-of-the-hologram-of-the-cloud-blue-background-the-concept-of.jpg?s=612x612&w=0&k=20&c=evP4FZedkZNti7Ev0BrKno_dydPHYMFs_xs4gz7YBxw=" class="d-block w-100" style="height: 400px; object-fit: cover;" alt="Image 2">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://media.istockphoto.com/id/1312418673/photo/security-cyber-login-computer-digital-internet-password-privacy-solution-technology-attack.jpg?s=612x612&w=0&k=20&c=9y7rqeb2tSdJKhtDecn0P-qrslEF_yP8D4Ft7w1o_bs=" class="d-block w-100" style="height: 400px; object-fit: cover;" alt="Image 3">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://media.istockphoto.com/id/467248618/photo/cloud-computing.jpg?s=612x612&w=0&k=20&c=WWTw8AsuNtbruDHWNtD9-PzFzBpokUxhpIvC6zT1bd0=" class="d-block w-100" style="height: 400px; object-fit: cover;" alt="Image 4">
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#imageCarousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#imageCarousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>   
+        <div class="text-center mt-5">
+            <p>Your belongings secured in a single location</p>
+            <a href="/login" class="btn btn-login">Login here</a>
+        </div>
+        <br> <br> <br> <br>
+    </div>
+
+    <!-- Bootstrap JS, Popper.js, and jQuery (for Bootstrap functionality) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        document.body.addEventListener("pointermove", (e) => {
+            const { currentTarget: el, clientX: x, clientY: y } = e;
+            const { top: t, left: l, width: w, height: h } = el.getBoundingClientRect();
+            el.style.setProperty('--posX',  x - l - w / 2);
+            el.style.setProperty('--posY',  y - t - h / 2);
+        });
+    </script>
+</body>
+
+</html>
